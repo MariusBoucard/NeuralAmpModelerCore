@@ -22,7 +22,26 @@ endif()
 
 set(NAM_DEPS_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Dependencies")
 
-add_subdirectory(tools)
+# Add source files for the NAM library
+set(NAM_SOURCES
+    NAM/dsp.cpp
+    NAM/util.cpp
+    NAM/activations.cpp
+    NAM/lstm.cpp
+)
+
+# Define the NAM library
+add_library(NAM STATIC ${NAM_SOURCES})
+
+# Include directories for the NAM library
+target_include_directories(NAM PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/eigen
+	${CMAKE_CURRENT_SOURCE_DIR}/Dependencies/nlohmann
+
+)
+
+#add_subdirectory(tools)
 
 #file(MAKE_DIRECTORY build/tools)
 

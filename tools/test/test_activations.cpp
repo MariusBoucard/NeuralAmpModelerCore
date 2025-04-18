@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-#include "NAM/activations.h"
+#include "NeuralAmpModelerCore/NAM/activations.h"
 
 namespace test_activations
 {
