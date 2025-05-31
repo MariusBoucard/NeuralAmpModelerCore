@@ -8,7 +8,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED OFF)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++ -std=c++20")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 	include_directories(SYSTEM /usr/local/include)
@@ -28,6 +28,9 @@ set(NAM_SOURCES
     NAM/util.cpp
     NAM/activations.cpp
     NAM/lstm.cpp
+    NAM/get_dsp.cpp
+    NAM/wavenet.cpp 
+    NAM/convnet.cpp
 )
 
 # Define the NAM library
@@ -49,3 +52,5 @@ target_include_directories(NAM PUBLIC
 #	${CMAKE_COMMAND} -E copy "$<TARGET_FILE:tools>" tools/
 #	DEPENDS tools
 #)
+
+
