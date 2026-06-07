@@ -1,3 +1,4 @@
 [submodule "Dependencies/eigen"]
 	path = Dependencies/eigen
 	url = https://gitlab.com/libeigen/eigen
+	branch = master
